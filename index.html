@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pwademo</title>
+    <link href="index.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<img src="images/timg.jpeg" />
+<script>
+    if('ServiceWorker' in window){
+        navigator.serviceWorker.register('/sw.js')
+                .then(function(resistration){
+                    console.log('ServiceWorker已经登记成功，范围',resistration);
+                }).catch(function(err){
+                    console.log('serverworker登记失败',err);
+                })
+    }
+</script>
+</body>
+</html>
